@@ -1,0 +1,4 @@
+- Create a Docker image based on Rasbpian for the sentry gun controller
+- Start from dotnet core 2.1
+- Add OpenCv build for arm32
+- Add FFMpeg to the image (for RTSP stream)
