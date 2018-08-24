@@ -32,7 +32,7 @@ RUN apt-get install -y --no-install-recommends \
     gfortran
 
 # python3 and packages
-# todo: install python 3.7 and use the built in venv
+# todo: install python 3.7
 # https://www.scivision.co/compile-install-python-beta-raspberry-pi/
 RUN apt-get install -y --no-install-recommends \
     python3-dev
@@ -61,8 +61,8 @@ RUN cmake \
     -D CMAKE_INSTALL_PREFIX=/usr/local \
     -D INSTALL_C_EXAMPLES=OFF \
     -D INSTALL_PYTHON_EXAMPLES=OFF \
-    -D OPENCV_EXTRA_MODULES_PATH=~/opencv_contrib/modules \
-    -D BUILD_EXAMPLES=ON ..
+    -D OPENCV_EXTRA_MODULES_PATH=/usr/src/opencv_contrib/modules \
+    -D BUILD_EXAMPLES=OFF ..
 RUN make -j -l 4
 RUN make install
 RUN ldconfig
